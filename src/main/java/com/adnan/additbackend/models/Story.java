@@ -1,6 +1,7 @@
 package com.adnan.additbackend.models;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -25,11 +26,13 @@ public class Story {
 
     private String post;
 
+    @Column(nullable = false)
     private String title;
 
     public Story() {
     }
 
+    @JsonIgnore
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "story")
     private Set<Vote> votes = new HashSet<>();
 
@@ -44,9 +47,18 @@ public class Story {
     private Date modifiedAt = new Date();
 
     @Transient
-    private Integer upvotes;
+    private Integer upvotes = 0;
 
     @Transient
-    private Integer downvotes;
+    private Integer downvotes = 0;
+
+
+    public Story addVote(Vote vote){
+        vote.setStory(this);
+        this.votes.add(vote);
+        return this;
+    }
+
+
 
 }

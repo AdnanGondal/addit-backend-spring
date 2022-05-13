@@ -11,9 +11,9 @@ INSERT INTO votes (direction,story_id) VALUES ('UP',1);
 INSERT INTO votes (direction,story_id) VALUES ('DOWN',1);
 
 INSERT INTO votes (direction,story_id) VALUES ('UP',2);
-INSERT INTO votes (direction,story_id) VALUES ('DOWN',1);
-INSERT INTO votes (direction,story_id) VALUES ('DOWN',1);
-INSERT INTO votes (direction,story_id) VALUES ('DOWN',1);
+INSERT INTO votes (direction,story_id) VALUES ('DOWN',2);
+INSERT INTO votes (direction,story_id) VALUES ('DOWN',2);
+INSERT INTO votes (direction,story_id) VALUES ('DOWN',2);
 
 INSERT INTO votes (direction,story_id) VALUES ('UP',3);
 INSERT INTO votes (direction,story_id) VALUES ('UP',3);

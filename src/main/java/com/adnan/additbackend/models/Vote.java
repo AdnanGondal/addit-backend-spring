@@ -36,6 +36,10 @@ public class Vote {
     public Vote() {
     }
 
+    public Vote(Direction direction) {
+        this.direction = direction;
+    }
+
     public Long getId() {
         return id;
     }
@@ -75,4 +79,5 @@ public class Vote {
     public void setModifiedAt(Date modifiedAt) {
         this.modifiedAt = modifiedAt;
     }
+
 }
