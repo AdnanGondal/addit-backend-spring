@@ -36,6 +36,10 @@ public class Story {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "story")
     private Set<Vote> votes = new HashSet<>();
 
+    @JsonIgnore
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "story")
+    private Set<Comment> comments = new HashSet<>();
+
     @CreationTimestamp
     @Temporal(TemporalType.TIMESTAMP)
     @Column(columnDefinition = "timestamp default current_timestamp")

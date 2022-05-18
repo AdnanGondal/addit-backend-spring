@@ -29,10 +29,12 @@ public class StoryController {
 
     @GetMapping({"/stories","/stories/"})
     public Iterable<Story> all(){
+
+
         return storyService.getAllStories();
     }
 
-    @PostMapping({"/story/","/story/"})
+    @PostMapping({"/story","/story/"})
     public String newStory(@RequestBody Story story) {
 
         storyService.saveStory(story);

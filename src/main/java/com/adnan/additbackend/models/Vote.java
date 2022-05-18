@@ -4,7 +4,6 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
-import java.util.Calendar;
 import java.util.Date;
 
 @Entity
@@ -41,43 +40,44 @@ public class Vote {
     }
 
     public Long getId() {
-        return id;
+        return this.id;
+    }
+
+    public Direction getDirection() {
+        return this.direction;
+    }
+
+    public Story getStory() {
+        return this.story;
+    }
+
+    public Date getCreatedAt() {
+        return this.createdAt;
+    }
+
+    public Date getModifiedAt() {
+        return this.modifiedAt;
     }
 
     public void setId(Long id) {
         this.id = id;
     }
 
-    public Direction getDirection() {
-        return direction;
-    }
-
     public void setDirection(Direction direction) {
         this.direction = direction;
-    }
-
-    public Story getStory() {
-        return story;
     }
 
     public void setStory(Story story) {
         this.story = story;
     }
 
-    public Date getCreatedAt() {
-        return createdAt;
-    }
-
     public void setCreatedAt(Date createdAt) {
         this.createdAt = createdAt;
-    }
-
-    public Date getModifiedAt() {
-        return modifiedAt;
     }
 
     public void setModifiedAt(Date modifiedAt) {
         this.modifiedAt = modifiedAt;
     }
+
 
 }

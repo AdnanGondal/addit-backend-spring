@@ -5,7 +5,10 @@ import com.adnan.additbackend.models.Story;
 import com.adnan.additbackend.repositories.StoryRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.HashSet;
 import java.util.Iterator;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 @Service
 public class StoryServiceImpl implements StoryService {
@@ -17,7 +20,9 @@ public class StoryServiceImpl implements StoryService {
     }
 
     @Override
-    public Iterable<Story> getAllStories() {
+    public Set<Story> getAllStories() {
+
+        Set<Story> stories = new LinkedHashSet<>();
 
         Iterator<Story> repo = storyRepository.findAll().iterator();
 
@@ -33,9 +38,10 @@ public class StoryServiceImpl implements StoryService {
                 }
 
             });
+            stories.add(story);
         });
 
-        return storyRepository.findAll();
+        return stories;
     }
 
     @Override
